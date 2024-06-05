@@ -1,4 +1,4 @@
-# KFC Theme - KAI FossBilling Client
+# KFC Theme - Kai Fossbilling Client
 ![kfctheme](https://github.com/alicom13/kfc/blob/b04b451bb96995310536d51ef21272e7b4124ac0/kfc-screencapture.png)
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
