@@ -1,5 +1,5 @@
 # KFC Theme - Kai Fossbilling Client
-![kfctheme](https://github.com/alicom13/kfc/blob/b04b451bb96995310536d51ef21272e7b4124ac0/kfc-screencapture.png)
+![kfctheme](https://github.com/alicom13/kfc/blob/22316e23c0cba1a4f81177b8ed76c59b43dfd8c9/kfc-screencapture.png)
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 
