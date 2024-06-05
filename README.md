@@ -26,3 +26,6 @@ Product Detail : https://themekita.com/kaiadmin-lite-bootstrap-5-dashboard.html
 Live Preview : https://themekita.com/demo-kaiadmin-lite-bootstrap-dashboard/livepreview/demo1/
 
 Kaiadmin Pro Version : https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/
+
+#### Thanks
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W3YYACE)
