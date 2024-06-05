@@ -1,0 +1,29 @@
+@media (min-width: 0) {
+	p {font-size :14px !important;}
+	h1 {font-size :19px !important;}
+	h2 {font-size :18px !important;}
+	h3 {font-size :17px !important;}
+	h4 {font-size :18px !important;}
+	h5 {font-size :17px !important;}
+	h6 {font-size :16px !important;}
+}
+
+@media (min-width: 576px !important;) and (max-width: 767.98px) {
+	p {font-size :16px !important;}
+	h1 {font-size :24px !important;}
+	h2 {font-size :22px !important;}
+	h3 {font-size :20px !important;}
+	h4 {font-size :22px !important;}
+	h5 {font-size :20px !important;}
+	h6 {font-size :18px !important;}
+}
+
+@media (min-width: 992px) {
+	p {font-size :18px !important;}
+	h1 {font-size :28px !important;}
+	h2 {font-size :26px !important;}
+	h3 {font-size :24px !important;}
+	h4 {font-size :26px !important;}
+	h5 {font-size :24px !important;}
+	h6 {font-size :22px !important;}
+}
