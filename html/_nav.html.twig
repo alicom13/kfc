@@ -1,0 +1,32 @@
+          <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom" data-background-color="dark">
+            <div class="container-fluid">
+              <nav class="navbar navbar-header-left navbar-expand-lg p-0 d-none d-lg-flex">
+              </nav>
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+				
+                {% if settings.top_menu_dashboard %}
+                    <li class="nav-item">
+                        <a class="btn btn-xs btn-primary" href="{{ ''|link }}">{{ 'Dashboard'|trans }}</a>
+                    </li>
+                {% endif %}
+
+                {% if settings.top_menu_order %}
+                    <li class="nav-item">
+                        <a class="btn btn-xs btn-primary" href="{{ '/order'|link }}">{{ 'Order'|trans }}</a>
+                    </li>
+                {% endif %}
+                {% if settings.top_menu_profile %}
+                    <li class="nav-item">
+                        {% if not client %}
+                            <a class="btn btn-xs btn-danger" href="{{ 'login'|link }}">
+                                <span class="btn-label">
+                                    <i class="icon-power"></i>
+                                </span>
+                                {{ 'Login'|trans }}
+                            </a>
+                        {% endif %}
+                    </li>
+                {% endif %}
+              </ul>
+            </div>
+          </nav>

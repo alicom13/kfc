@@ -1,0 +1,132 @@
+
+                {% if settings.top_menu_signout %}
+                <li class="nav-item">
+                    {% if client %}
+                    <a data-bs-toggle="collapse" href="#UserProfile" class="collapsed" aria-expanded="false">
+                        <img class="img-fluid rounded-circle avatar-xs m-3" alt="{{ profile.first_name }} {{ profile.last_name }} gravatar" src="{{ profile.email|gravatar(60) }}">
+                        {% if profile.company %}
+                        <p>{{ profile.first_name }} | {{ profile.company }}</p>
+                        {% else %}
+                        <p>{{ profile.first_name }} {{ profile.last_name }}</p>
+                        {% endif %}
+                    <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="UserProfile">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ 'client/profile'|link }}">
+                                <span class="sub-item">{{ 'Profile'|trans }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ 'client/logout'|link }}">
+                                <span class="sub-item">{{ 'Sign out'|trans }}</span>
+                                </a>
+                            </li>
+                            <li>
+                            </li>
+                        </ul>
+                    </div>
+                    {% else %}
+                    <a href="{{ 'signup'|link }}">
+                        <i class="icon-power"></i>
+                        <p>{{ 'Sign up'|trans }}</p>
+                    </a>
+                    {% endif %}
+                {% endif %}
+                </li>
+<!--Batas-->
+            {% if settings.side_menu_dashboard %}
+                <li class="nav-item{% if request._url == '/' %} active{% endif %}">
+                    <a href="{{ '/'|link }}">
+                        <i class="icon-grid"></i>
+                        <p>{{ 'Dashboard'|trans }}</p>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if settings.side_menu_order %}
+                <li class="nav-item{% if request._url == '/order' %} active{% endif %}">
+                    <a href="{{ '/order'|link }}">
+                        <i class="icon-basket-loaded"></i>
+                        <p>{{ 'Order'|trans }}</p>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if settings.side_menu_support %}
+                <li class="nav-item{% if request._url == '/support' %} active{% endif %}">
+                    <a href="{{ '/support'|link }}">
+                        <i class="icon-earphones-alt"></i>
+                        <p>{{ 'Support'|trans }}</p>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if settings.side_menu_services %}
+                <li class="nav-item{% if request._url == '/order/service' %} active{% endif %}">
+                    <a href="{{ '/order/service'|link }}">
+                        <i class="icon-layers"></i>
+                        <p>{{ 'Services'|trans }}</p>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if settings.side_menu_invoices %}
+                <li class="nav-item{% if request._url == '/invoice' %} active{% endif %}">
+                    <a href="{{ '/invoice'|link }}">
+                        <i class="icon-docs"></i>
+                        <p>{{ 'Invoices'|trans }}</p>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if settings.side_menu_emails %}
+                <li class="nav-item{% if request._url == '/email' %} active{% endif %}">
+                    <a href="{{ '/email'|link }}">
+                        <i class="icon-envelope"></i>
+                        <p>{{ 'Email'|trans }}</p>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if settings.side_menu_payments %}
+                <li class="nav-item{% if request._url == '/client/balance' %} active{% endif %}">
+                    <a href="{{ '/client/balance'|link }}">
+                        <i class="icon-wallet"></i>
+                        <p>{{ 'Wallet'|trans }}</p>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if (guest.extension_is_on({"mod":"news"}) and settings.side_menu_news) %}
+                <li class="nav-item{% if request._url == '/order' %} active{% endif %}">
+                    <a href="{{ '/news'|link }}">
+                        <i class="icon-feed"></i>
+                        <p>{{ 'News'|trans }}</p>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if (guest.support_kb_enabled() and settings.side_menu_kb) %}
+                <li class="nav-item{% if request._url == '/support/kb' %} active{% endif %}">
+                    <a href="{{ 'support/kb'|link }}">
+                        <i class="icon-book-open"></i>
+                        <p>{{ 'Knowledge base'|trans }}</p>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if settings.sidebar_balance_enabled and client %}
+                <div class="pt-3 ps-3">
+                    <h5 class="text-secondary d-block pb-1">{{ 'Account balance'|trans }}</h5>
+                    <h4><strong>{{ profile.balance | money(profile.currency) }}</strong></h4>
+                </div>
+            {% endif %}
+
+            {% if settings.sidebar_note_enabled %}
+                <li class="pt-3 ps-3">
+                    <h5 class="text-secondary d-block pb-1">{{ settings.sidebar_note_title }}</h5>
+                    <span>{{ settings.sidebar_note_content }}</span>
+                </li>
+            {% endif %}

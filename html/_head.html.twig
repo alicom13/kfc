@@ -1,0 +1,42 @@
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% block meta_title %}{{ settings.meta_title }}{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="{{ 'kai/img/kaiadmin/favicon.ico' | asset_url }}" type="image/x-icon" />
+    <meta property="bb:url" content="{{ constant('SYSTEM_URL') }}">
+    <meta property="bb:client_area" content="{{ '/'|link }}">
+    <meta name="csrf-token" content="{{ CSRFToken }}">
+
+    <meta name="description" content="{% block meta_description %}{{ settings.meta_description }}{% endblock %}">
+    <meta name="robots" content="{{ settings.meta_robots }}">
+    <meta name="author" content="{{ settings.meta_author }}">
+    <meta name="generator" content="FOSSBilling">
+    
+    <!-- Fonts and icons -->
+    <script src="{{ 'kai/js/plugin/webfont/webfont.min.js' | asset_url }}"></script>
+    <script>
+		WebFont.load({
+			google: {"families":["Public Sans:300,400,500,600,700"]},
+			custom: {"families":["Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['{{ 'kai/css/fonts.min.css' | asset_url }}']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ 'kai/css/bootstrap.min.css' | asset_url }}" />
+    <link rel="stylesheet" href="{{ 'kai/css/plugins.min.css' | asset_url }}" />
+    <link rel="stylesheet" href="{{ 'kai/css/kaiadmin.min.css' | asset_url }}" />
+    <link rel="stylesheet" href="{{ 'css/kfc.css' | asset_url }}" />
+    {% block opengraph %}{% endblock %}
+    <link rel="shortcut icon" href="{{ guest.system_company.favicon_url }}">
+    
+    {{ "Api/API.js" | library_url | script_tag }}
+    {{ encore_entry_script_tags('huraga') }}
+    
+    {{ DebugBar_renderHead() }}
+    
+    {% block head %}{% endblock %}
+    {% block js %}{% endblock %}
+  </head>
