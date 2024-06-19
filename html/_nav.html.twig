@@ -27,6 +27,14 @@
                         {% endif %}
                     </li>
                 {% endif %}
+                <li class="nav-item">
+                    {% set languages = guest.extension_languages(true) %}
+                    <select name="lang" class="js-language-selector form-select btn btn-xs btn-primary" style="display:none;">
+                        {% for lang in languages %}
+                        <option value="{{ lang.locale }}" data-custom-properties="{{ lang.locale|split('_')[1]|upper }}"></option>
+                        {% endfor %}
+                    </select>
+                </li>
               </ul>
             </div>
           </nav>
